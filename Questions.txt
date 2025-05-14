@@ -1,0 +1,52 @@
+Questions:
+Problem statement, do I have it right?
+The problem is that various datasets that describe emotions in different scenarios do not use the same labels or measurements. Some can use the same labels but no the same scope
+for example binary (0,1) or a value between 0-1 or even 0-100. Due to this it is not easily generalisable for a model to know if it will do well when trained on one dataset and then
+evaluated on the other (due to the difference in labels and the scope of the estimation)
+
+To solve this
+We will create a predictor that can predict based on for example two datasets how well you can generalise between the two, this measurement will then give you a baseline on
+if the model will perform well or not. So it will predict how well it will do on dataset 2 when finetuned on dataset 1 (and then if u can find one dataset that is good for multiple datasets, you can use that one for the finetuning)
+
+Question:
+Why not alter the datasets to use the same format. What stops us from doing that? is it a time constraint? or the idea that for every dataset you would have to make the adjustments by hand (mostly)
+
+This is OoD prediction, due to the datasets being different meaning that dataset 2 is OoD of dataset 1 and that is what we want to generalise upon
+
+The plan of the project:
+- You have a emotion classifier, that can classify the emotion of a piece of text, it uses a text encoder to encode the piece of text and a classifier head to classify the emotion
+- When you transfer information from two datasets D_i and D_j where you train on D_j and then finetune on D_i you want to perform better on D_i (so you don't want to fully retrain and therefore find the D_j that is most generalisable to make performance on D_i quick and simple)
+- What we want to predict in the project is how much the model will lose/gain from being transferred from D_j to D_i with finetuning
+- So you want to measure the difference between training and performing on D_i alone, and training on D_j finetuning (transferring) on D_i
+- The idea here is that some datasets will do better at generalising (performing well after finetuning, than others) you want to find those
+- The idea is to use task representations and text representations to measure the similarities between datasets (so vocabulary and emotional patterns)
+- to do this a regression model can be used, it measures the difference in task representation and in text representation
+- This way we can learn what datasets help each other in transfer learning, and you can select intermediate datasets to base training on. This allows for good pre-training
+
+
+- Choose datasets (Make motivated choices, but be smart about it. has to be done by hand on the descriptions)
+- Finetune on dataset (make this generic code, to throw any dataset in) (if training the entire model is too much work, feel free to use stuff such as soft-prompting, these soft prompt embeddings can represent as the task embeddings) (this is called PEFT, parameter efficient finetuning)
+- Setup a system, to do the 2nd finetuning (throwing away the head, and make it so it can classify on the other dataset)
+ 
+- After all this, we can get the task embedding and text embeddings to then draw conclusions, the task embeddings are explained in the paper about Fischer matrix methods
+
+
+More questions
+- For step 3, to be clear. We do retrain but with all layers frozen besides the classification head. otherwise I do not see how this would ever work.
+- Its safer to reinitialise the classification head but there probably is a minor difference that doesn't matter
+- We can use one snellius account
+- you can freeze the earlier layers for example the first 6 of the bert-uncased. But this is only if u want to be faster
+- maximum learning rate and batch size (dynamic for each dataset but could be uniform), small noisy data small LR and large confident dataset u can get  away with large LR
+- LR warmup and decay
+- The square of the gradient creates a vector (the size/number of params of the model, that will the task embedding)
+- To confirm step 5 (your prediction) you would use the results from step 3 to confirm it
+- The draft is allowed on the Friday (of the poster presentation) so we don't have the focus on the 19th
+
+Todo's:
+- Figure out the learning rate including the scheduling
+- preprocess the 10 datasets (1 already done) (either use snellius to check yourself, or use a GPU device)
+- Setup GitHub and share it
+- Setup the snellius, and get everything ready
+- Achieve step 4
+- Create a draft report (so start on the report)
+- After achieving step 4, Create the poster

@@ -1,0 +1,572 @@
+{
+  "AffectiveText": {
+    "data": [
+      {
+        "creation_time": 1744372843.626537,
+        "file_path": "AffectiveText/data-00000-of-00001.arrow",
+        "file_size": 136824,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372843.6375372,
+        "file_path": "AffectiveText/state.json",
+        "file_size": 247,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372843.6375372,
+        "file_path": "AffectiveText/dataset_info.json",
+        "file_size": 1903,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "CARER": {
+    "data": [
+      {
+        "creation_time": 1744372856.4409285,
+        "file_path": "CARER/data-00000-of-00001.arrow",
+        "file_size": 2038760,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372856.4519284,
+        "file_path": "CARER/state.json",
+        "file_size": 266,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372856.4519284,
+        "file_path": "CARER/dataset_info.json",
+        "file_size": 2687,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "CancerEmo": {
+    "data": [
+      {
+        "creation_time": 1744372850.6393092,
+        "file_path": "CancerEmo/data-00000-of-00001.arrow",
+        "file_size": 1026560,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372850.6393092,
+        "file_path": "CancerEmo/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372850.6393092,
+        "file_path": "CancerEmo/dataset_info.json",
+        "file_size": 2060,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "CrowdFlower": {
+    "data": [
+      {
+        "creation_time": 1744372865.9772768,
+        "file_path": "CrowdFlower/data-00000-of-00001.arrow",
+        "file_size": 7856800,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372865.9772768,
+        "file_path": "CrowdFlower/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372865.9772768,
+        "file_path": "CrowdFlower/dataset_info.json",
+        "file_size": 1948,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "ElectoralTweets": {
+    "data": [
+      {
+        "creation_time": 1744372868.4742768,
+        "file_path": "ElectoralTweets/data-00000-of-00001.arrow",
+        "file_size": 424760,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372868.4852767,
+        "file_path": "ElectoralTweets/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372868.4852767,
+        "file_path": "ElectoralTweets/dataset_info.json",
+        "file_size": 3428,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "EmoBank": {
+    "data": [
+      {
+        "creation_time": 1744372871.2572768,
+        "file_path": "EmoBank/data-00000-of-00001.arrow",
+        "file_size": 1778440,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372871.2572768,
+        "file_path": "EmoBank/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372871.2572768,
+        "file_path": "EmoBank/dataset_info.json",
+        "file_size": 1896,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "EmoInt": {
+    "data": [
+      {
+        "creation_time": 1744372877.9562767,
+        "file_path": "EmoInt/data-00000-of-00001.arrow",
+        "file_size": 975728,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372877.9562767,
+        "file_path": "EmoInt/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372877.9562767,
+        "file_path": "EmoInt/dataset_info.json",
+        "file_size": 1624,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "EmotionStimulus": {
+    "data": [
+      {
+        "creation_time": 1744372873.0650656,
+        "file_path": "EmotionStimulus/data-00000-of-00001.arrow",
+        "file_size": 261928,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372873.0650656,
+        "file_path": "EmotionStimulus/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372873.0650656,
+        "file_path": "EmotionStimulus/dataset_info.json",
+        "file_size": 1860,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "FBValenceArousal": {
+    "data": [
+      {
+        "creation_time": 1744372873.7910657,
+        "file_path": "FBValenceArousal/data-00000-of-00001.arrow",
+        "file_size": 289032,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372873.8020656,
+        "file_path": "FBValenceArousal/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372873.8020656,
+        "file_path": "FBValenceArousal/dataset_info.json",
+        "file_size": 1643,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "GoEmotions": {
+    "data": [
+      {
+        "creation_time": 1744372892.4565408,
+        "file_path": "GoEmotions/data-00000-of-00001.arrow",
+        "file_size": 32898464,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372892.4565408,
+        "file_path": "GoEmotions/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372892.4565408,
+        "file_path": "GoEmotions/dataset_info.json",
+        "file_size": 3923,
+        "name": "dataset_info.json"
+      }
+    ],
+    "metadata": [
+      {
+        "creation_time": 1744372874.2200656,
+        "file_path": "GoEmotions/emotions.txt",
+        "file_size": 248,
+        "name": "emotions.txt"
+      },
+      {
+        "creation_time": 1744372874.5390656,
+        "file_path": "GoEmotions/sentiment_dict.json",
+        "file_size": 367,
+        "name": "sentiment_dict.json"
+      },
+      {
+        "creation_time": 1744372874.8800657,
+        "file_path": "GoEmotions/ekman_mapping.json",
+        "file_size": 396,
+        "name": "ekman_mapping.json"
+      }
+    ]
+  },
+  "GoodNewsEveryone": {
+    "data": [
+      {
+        "creation_time": 1744372894.5135407,
+        "file_path": "GoodNewsEveryone/data-00000-of-00001.arrow",
+        "file_size": 568208,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372894.5135407,
+        "file_path": "GoodNewsEveryone/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372894.5135407,
+        "file_path": "GoodNewsEveryone/dataset_info.json",
+        "file_size": 2870,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "Hurricanes24": {
+    "data": [
+      {
+        "creation_time": 1744372920.603916,
+        "file_path": "Hurricanes24/data-00000-of-00001.arrow",
+        "file_size": 4819688,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372920.603916,
+        "file_path": "Hurricanes24/state.json",
+        "file_size": 247,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372920.603916,
+        "file_path": "Hurricanes24/dataset_info.json",
+        "file_size": 2548,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "Hurricanes8": {
+    "data": [
+      {
+        "creation_time": 1744372915.3013852,
+        "file_path": "Hurricanes8/data-00000-of-00001.arrow",
+        "file_size": 1741328,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372915.3013852,
+        "file_path": "Hurricanes8/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372915.3013852,
+        "file_path": "Hurricanes8/dataset_info.json",
+        "file_size": 1837,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "ISEAR": {
+    "data": [
+      {
+        "creation_time": 1744372921.780916,
+        "file_path": "ISEAR/data-00000-of-00001.arrow",
+        "file_size": 1060792,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372921.791916,
+        "file_path": "ISEAR/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372921.791916,
+        "file_path": "ISEAR/dataset_info.json",
+        "file_size": 2333,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "REN20k": {
+    "data": [
+      {
+        "creation_time": 1744372925.7645454,
+        "file_path": "REN20k/data-00000-of-00001.arrow",
+        "file_size": 66679000,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372925.7645454,
+        "file_path": "REN20k/state.json",
+        "file_size": 247,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372925.7645454,
+        "file_path": "REN20k/dataset_info.json",
+        "file_size": 1864,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "SSEC": {
+    "data": [
+      {
+        "creation_time": 1744372939.5562758,
+        "file_path": "SSEC/data-00000-of-00001.arrow",
+        "file_size": 555160,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372939.5562758,
+        "file_path": "SSEC/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372939.5562758,
+        "file_path": "SSEC/dataset_info.json",
+        "file_size": 1925,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "Semeval2018Classification": {
+    "data": [
+      {
+        "creation_time": 1744372929.505436,
+        "file_path": "Semeval2018Classification/data-00000-of-00001.arrow",
+        "file_size": 1309976,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372929.505436,
+        "file_path": "Semeval2018Classification/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372929.505436,
+        "file_path": "Semeval2018Classification/dataset_info.json",
+        "file_size": 2730,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "Semeval2018Intensity": {
+    "data": [
+      {
+        "creation_time": 1744372934.1160922,
+        "file_path": "Semeval2018Intensity/data-00000-of-00001.arrow",
+        "file_size": 1763584,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372934.1160922,
+        "file_path": "Semeval2018Intensity/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372934.1160922,
+        "file_path": "Semeval2018Intensity/dataset_info.json",
+        "file_size": 2281,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "SentimentalLIAR": {
+    "data": [
+      {
+        "creation_time": 1744372937.6910923,
+        "file_path": "SentimentalLIAR/data-00000-of-00001.arrow",
+        "file_size": 3297512,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372937.6910923,
+        "file_path": "SentimentalLIAR/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372937.6910923,
+        "file_path": "SentimentalLIAR/dataset_info.json",
+        "file_size": 2333,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "StockEmotions": {
+    "data": [
+      {
+        "creation_time": 1744372941.998276,
+        "file_path": "StockEmotions/data-00000-of-00001.arrow",
+        "file_size": 1208248,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372942.009276,
+        "file_path": "StockEmotions/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372942.009276,
+        "file_path": "StockEmotions/dataset_info.json",
+        "file_size": 2310,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "TEC": {
+    "data": [
+      {
+        "creation_time": 1744372944.1515272,
+        "file_path": "TEC/data-00000-of-00001.arrow",
+        "file_size": 2051288,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372944.1515272,
+        "file_path": "TEC/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372944.1515272,
+        "file_path": "TEC/dataset_info.json",
+        "file_size": 2185,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "TalesEmotions": {
+    "data": [
+      {
+        "creation_time": 1744372942.713276,
+        "file_path": "TalesEmotions/data-00000-of-00001.arrow",
+        "file_size": 3164104,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372942.713276,
+        "file_path": "TalesEmotions/state.json",
+        "file_size": 247,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372942.713276,
+        "file_path": "TalesEmotions/dataset_info.json",
+        "file_size": 1842,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "UsVsThem": {
+    "data": [
+      {
+        "creation_time": 1744372947.4405272,
+        "file_path": "UsVsThem/data-00000-of-00001.arrow",
+        "file_size": 3432552,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372947.4405272,
+        "file_path": "UsVsThem/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372947.4405272,
+        "file_path": "UsVsThem/dataset_info.json",
+        "file_size": 2792,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "WASSA22": {
+    "data": [
+      {
+        "creation_time": 1744372959.1637456,
+        "file_path": "WASSA22/data-00000-of-00001.arrow",
+        "file_size": 1044976,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372959.1637456,
+        "file_path": "WASSA22/state.json",
+        "file_size": 250,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372959.1637456,
+        "file_path": "WASSA22/dataset_info.json",
+        "file_size": 2217,
+        "name": "dataset_info.json"
+      }
+    ]
+  },
+  "XED": {
+    "data": [
+      {
+        "creation_time": 1744372962.8487456,
+        "file_path": "XED/data-00000-of-00001.arrow",
+        "file_size": 1142416,
+        "name": "data-00000-of-00001.arrow"
+      },
+      {
+        "creation_time": 1744372962.8487456,
+        "file_path": "XED/state.json",
+        "file_size": 247,
+        "name": "state.json"
+      },
+      {
+        "creation_time": 1744372962.8487456,
+        "file_path": "XED/dataset_info.json",
+        "file_size": 1436,
+        "name": "dataset_info.json"
+      }
+    ]
+  }
+}

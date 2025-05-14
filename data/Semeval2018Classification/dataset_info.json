@@ -1,0 +1,86 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_semeval_2018_intensity,\n    title = '{S}em{E}val-2018 Task 1: Affect in Tweets',\n    author = 'Mohammad, Saif  and\n      Bravo-Marquez, Felipe  and\n      Salameh, Mohammad  and\n      Kiritchenko, Svetlana',\n    editor = 'Apidianaki, Marianna  and\n      Mohammad, Saif M.  and\n      May, Jonathan  and\n      Shutova, Ekaterina  and\n      Bethard, Steven  and\n      Carpuat, Marine',\n    booktitle = 'Proceedings of the 12th International Workshop on Semantic Evaluation',\n    month = jun,\n    year = '2018',\n    address = 'New Orleans, Louisiana',\n    publisher = 'Association for Computational Linguistics',\n    url = 'https://aclanthology.org/S18-1001/',\n    doi = '10.18653/v1/S18-1001',\n    pages = '1--17',\n}",
+  "config_name": "default",
+  "dataset_name": "Semeval2018Classification",
+  "dataset_size": 1298912,
+  "description": "The SemEval 2018 Task 1 Intensity dataset, as processed using 'emotion_datasets'. This dataset includes an array of subtasks where automatic systems have to infer the affectual state of a person from their tweet. This subset contains annotations for an emotion classification task over eleven emotions commonly expressed in tweets.",
+  "download_checksums": {
+    "/tmp/tmpgz0wxu3_/output.parquet": {
+      "num_bytes": 898910,
+      "checksum": null
+    }
+  },
+  "download_size": 898910,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anticipation": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "love": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "optimism": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "pessimism": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "trust": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://competitions.codalab.org/competitions/17751#learn_the_details-overview",
+  "license": "",
+  "size_in_bytes": 2197822,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1298912,
+      "num_examples": 10983,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

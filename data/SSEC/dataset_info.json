@@ -1,0 +1,70 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_ssec,\n    title={Annotation, modelling and analysis of fine-grained emotions on a stance and sentiment detection corpus},\n    author={Schuff, Hendrik and Barnes, Jeremy and Mohme, Julian and Pad{'o}, Sebastian and Klinger, Roman},\n    booktitle={Proceedings of the 8th workshop on computational approaches to subjectivity, sentiment and social media analysis},\n    pages={13--23},\n    year={2017},\n}",
+  "config_name": "default",
+  "dataset_name": "SSEC",
+  "dataset_size": 551183,
+  "description": "The Stance Sentiment Emotion Corpus (SSEC) dataset, as processed using 'emotion_datasets'. The SSEC corpus is an annotation of the SemEval 2016 Twitter stance and sentiment corpus with emotion labels.",
+  "download_checksums": {
+    "/tmp/tmpyy5xlxxy/output.parquet": {
+      "num_bytes": 372622,
+      "checksum": null
+    }
+  },
+  "download_size": 372622,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anticipation": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "trust": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://www.romanklinger.de/ssec/",
+  "license": "",
+  "size_in_bytes": 923805,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 551183,
+      "num_examples": 4868,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

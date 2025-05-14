@@ -1,0 +1,94 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "CrowdFlower",
+  "dataset_size": 7882515,
+  "description": "The Emotion in Text dataset by CrowdFlower, as processed using 'emotion_datasets'. A dataset of tweets labelled into 1 of 13 different emotion classes. The original dataset is no longer publicly available, so this was taken from a secondary source.",
+  "download_checksums": {
+    "/tmp/tmpfr210t2c/output.parquet": {
+      "num_bytes": 2867868,
+      "checksum": null
+    }
+  },
+  "download_size": 2867868,
+  "features": {
+    "tweet_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "boredom": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "empty": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "enthusiasm": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "fun": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "happiness": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "hate": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "love": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "neutral": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "relief": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "worry": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 10750383,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 7882515,
+      "num_examples": 40000,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

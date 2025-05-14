@@ -1,0 +1,142 @@
+{
+  "builder_name": "parquet",
+  "citation": "@article{emotion_dataset_electoral_tweets,\n  title={Sentiment, emotion, purpose, and style in electoral tweets},\n  author={Mohammad, Saif M and Zhu, Xiaodan and Kiritchenko, Svetlana and Martin, Joel},\n  journal={Information Processing \\& Management},\n  volume={51},\n  number={4},\n  pages={480--499},\n  year={2015},\n  publisher={Elsevier}\n}",
+  "config_name": "default",
+  "dataset_name": "ElectoralTweets",
+  "dataset_size": 422059,
+  "description": "The Electoral Tweets dataset, as processed by 'emotion_datasets'. A set of 2012 US presidential election tweets annotated for a number of attributes pertaining to sentiment, emotion, purpose, and style by crowdsourcing.",
+  "download_checksums": {
+    "/tmp/tmpsi898heo/output.parquet": {
+      "num_bytes": 142781,
+      "checksum": null
+    }
+  },
+  "download_size": 142781,
+  "features": {
+    "ids": {
+      "feature": {
+        "dtype": "int32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "annotator_trusts": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "valence": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "arousal": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "acceptance": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "admiration": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "amazement": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "anger or annoyance or hostility or fury": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "anticipation or  expectancy or interest": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "calmness or serenity": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "disappointment": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "dislike": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "fear or apprehension or panic or terror": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "hate": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "indifference": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "joy or happiness or elation": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "like": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "sadness or gloominess or grief or sorrow": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "trust": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "uncertainty or indecision or confusion": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "vigilance": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "http://saifmohammad.com/WebPages/SentimentEmotionLabeledData.html",
+  "license": "",
+  "size_in_bytes": 564840,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 422059,
+      "num_examples": 1169,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

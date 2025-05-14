@@ -1,0 +1,49 @@
+{
+  "citation": "@article{emotion_dataset_xed,\n  title={XED: A multilingual dataset for sentiment analysis and emotion detection},\n  author={{\"O}hman, Emily and P{'a}mies, Marc and Kajava, Kaisla and Tiedemann, J{\"o}rg},\n  journal={arXiv preprint arXiv:2011.01612},\n  year={2020}\n}",
+  "dataset_name": "XED",
+  "description": "The XED dataset, as processed by 'emotion_datasets'. The dataset consists of emotion annotated movie subtitles from OPUS. Plutchik's 8 core emotions were used to annotate. The data is multilabel. The original annotations have been sourced for mainly English and Finnish. This is the English-only subset.",
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anticipation": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "trust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "neutral": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/Helsinki-NLP/XED/tree/master",
+  "license": ""
+}

@@ -1,0 +1,66 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{mohammad-2012-emotional,\n    title = \"{\\#}Emotional Tweets\",\n    author = \"Mohammad, Saif\",\n    editor = \"Agirre, Eneko  and\n      Bos, Johan  and\n      Diab, Mona  and\n      Manandhar, Suresh  and\n      Marton, Yuval  and\n      Yuret, Deniz\",\n    booktitle = \"*{SEM} 2012: The First Joint Conference on Lexical and Computational Semantics {--} Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation ({S}em{E}val 2012)\",\n    month = \"7-8 \" # jun,\n    year = \"2012\",\n    address = \"Montr{'e}al, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/S12-1033/\",\n    pages = \"246--255\"\n}",
+  "config_name": "default",
+  "dataset_name": "TEC",
+  "dataset_size": 2040973,
+  "description": "The Hashtag Emotion Corpus or Twitter Emotion Corpus dataset, as processed by 'emotion_datasets'. Twitter posts are found using self-reported hashtags.",
+  "download_checksums": {
+    "/tmp/tmppkksp8da/output.parquet": {
+      "num_bytes": 1544245,
+      "checksum": null
+    }
+  },
+  "download_size": 1544245,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://saifmohammad.com/WebPages/SentimentEmotionLabeledData.html",
+  "license": "",
+  "size_in_bytes": 3585218,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 2040973,
+      "num_examples": 21051,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

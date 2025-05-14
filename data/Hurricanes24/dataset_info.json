@@ -1,0 +1,113 @@
+{
+  "citation": "@inproceedings{emotion_dataset_hurricanes,\n   author={Desai, Shrey and Caragea, Cornelia and Li, Junyi Jessy},\n   title={{Detecting Perceived Emotions in Hurricane Disasters}},\n   booktitle={Proceedings of the Association for Computational Linguistics (ACL)},\n   year={2020},\n}",
+  "dataset_name": "Hurricanes24",
+  "description": "The Hurricanes dataset, as processed by 'emotion_datasets'. The datasets include tweets for 3 different hurricanes: Harvey, Irma and Maria. Each tweet has MTurk annotations for the fine-grained Plutchik-24 emotion system.",
+  "features": {
+    "hurricane": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "acceptance": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "admiration": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "amazement": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "annoyance": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "anticipation": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "apprehension": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "boredom": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "distraction": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "ecstasy": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "grief": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "interest": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "loathing": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "pensiveness": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "rage": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "serenity": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "terror": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "trust": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "vigilance": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/shreydesai/hurricane/tree/master",
+  "license": ""
+}

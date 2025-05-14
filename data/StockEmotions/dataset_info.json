@@ -1,0 +1,98 @@
+{
+  "builder_name": "parquet",
+  "citation": "@article{emotion_dataset_stockemotions,\n title={StockEmotions: Discover Investor Emotions for Financial Sentiment Analysis and Multivariate Time Series},\n author={Lee, Jean and Youn, Hoyoul Luis and Poon, Josiah and Han, Soyeon Caren},\n journal={arXiv preprint arXiv:2301.09279},\n year={2023}\n}",
+  "config_name": "default",
+  "dataset_name": "StockEmotions",
+  "dataset_size": 1197214,
+  "description": "The Stock Emotions dataset, as processed by 'emotion_datasets'. This dataset consists of comments collected from StockTwits, a financial social media platform, during the COVID19 pandemic.",
+  "download_checksums": {
+    "/tmp/tmpf_0_09_x/output.parquet": {
+      "num_bytes": 673069,
+      "checksum": null
+    }
+  },
+  "download_size": 673069,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "ticker": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "ambiguous": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "amusement": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anxiety": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "belief": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "confusion": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "depression": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "excitement": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "optimism": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "panic": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sentiment": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/adlnlp/StockEmotions/tree/main",
+  "license": "",
+  "size_in_bytes": 1870283,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1197214,
+      "num_examples": 10000,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_semeval_2018_intensity,\n    title = '{S}em{E}val-2018 Task 1: Affect in Tweets',\n    author = 'Mohammad, Saif  and\n      Bravo-Marquez, Felipe  and\n      Salameh, Mohammad  and\n      Kiritchenko, Svetlana',\n    editor = 'Apidianaki, Marianna  and\n      Mohammad, Saif M.  and\n      May, Jonathan  and\n      Shutova, Ekaterina  and\n      Bethard, Steven  and\n      Carpuat, Marine',\n    booktitle = 'Proceedings of the 12th International Workshop on Semantic Evaluation',\n    month = jun,\n    year = '2018',\n    address = 'New Orleans, Louisiana',\n    publisher = 'Association for Computational Linguistics',\n    url = 'https://aclanthology.org/S18-1001/',\n    doi = '10.18653/v1/S18-1001',\n    pages = '1--17',\n}",
+  "config_name": "default",
+  "dataset_name": "Semeval2018Intensity",
+  "dataset_size": 1758646,
+  "description": "The SemEval 2018 Task 1 Intensity dataset, as processed using 'emotion_datasets'. This dataset includes an array of subtasks where automatic systems have to infer the affectual state of a person from their tweet. This subset contains annotations for intensity of four basic emotions, and valence.",
+  "download_checksums": {
+    "/tmp/tmp_rfs2pn2/output.parquet": {
+      "num_bytes": 939068,
+      "checksum": null
+    }
+  },
+  "download_size": 939068,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "valence": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://competitions.codalab.org/competitions/17751#learn_the_details-overview",
+  "license": "",
+  "size_in_bytes": 2697714,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1758646,
+      "num_examples": 11288,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

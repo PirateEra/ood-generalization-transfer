@@ -1,0 +1,57 @@
+{
+  "citation": "@article{emotion_dataset_ren20k,\n    title={REDAffectiveLM: leveraging affect enriched embedding and transformer-based neural language model for readers\u2019 emotion detection},\n    author={Kadan, Anoop and Deepak, P and Gangan, Manjary P and Abraham, Sam Savitha and Lajish, VL},\n    journal={Knowledge and Information Systems},\n    volume={66},\n    number={12},\n    pages={7495--7525},\n    year={2024},\n    publisher={Springer}\n}",
+  "dataset_name": "REN20k",
+  "description": "The REN-20k dataset, as processed using 'emotion_datasets'. The Readers' Emotion News (REN) dataset is procured rom the popular online news network Rappler, where news articles were manually collected, from the year span 2014 to 2019, by checking articles with high emotion votings in the Mood Meter widget of Rappler indicating high popularity and social reach of these article.",
+  "features": {
+    "title": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "abstract": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "happy": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "sad": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "angry": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "don't care": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "inspired": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "afraid": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "amused": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "annoyed": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://dcs.uoc.ac.in/cida/resources/ren-20k.html",
+  "license": "CC-BY-NC"
+}

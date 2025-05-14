@@ -1,0 +1,182 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_go_emotions,\n   author = {Demszky, Dorottya and Movshovitz-Attias, Dana and Ko, Jeongwoo and Cowen, Alan and Nemade, Gaurav and Ravi, Sujith},\n   booktitle = {58th Annual Meeting of the Association for Computational Linguistics (ACL)},\n   title = {{GoEmotions: A Dataset of Fine-Grained Emotions}},\n   year = {2020}\n}",
+  "config_name": "default",
+  "dataset_name": "GoEmotions",
+  "dataset_size": 32451618,
+  "description": "The GoEmotions dataset, as processed using 'emotion_datasets'. GoEmotions is a corpus of 58k carefully curated comments extracted from Reddit, with human annotations to 27 emotion categories or Neutral.",
+  "download_checksums": {
+    "/tmp/tmpsx135djn/output.parquet": {
+      "num_bytes": 15230299,
+      "checksum": null
+    }
+  },
+  "download_size": 15230299,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "author": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "subreddit": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "link_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "parent_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "created_utc": {
+      "dtype": "float32",
+      "_type": "Value"
+    },
+    "rater_id": {
+      "dtype": "uint32",
+      "_type": "Value"
+    },
+    "example_very_unclear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "admiration": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "amusement": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "annoyance": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "approval": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "caring": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "confusion": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "curiosity": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "desire": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disappointment": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disapproval": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "embarrassment": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "excitement": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "gratitude": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "grief": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "love": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "nervousness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "optimism": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "pride": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "realization": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "relief": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "remorse": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "neutral": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/google-research/google-research/tree/master/goemotions",
+  "license": "",
+  "size_in_bytes": 47681917,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 32451618,
+      "num_examples": 211225,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inprocedings{emotion_dataset_good_news_everyone,\n author = {Laura Bostan, Evgeny Kim, Roman Klinger},\n title = {Good News Everyone: A Corpus of News Headlines Annotated with \\\\ Emotions, Semantic Roles and Reader Perception},\n booktitle = {Proceedings of the Twelfth International Conference on Language Resources and Evaluation (LREC 2020)},\n year = {2020},\n month = {may},\n date = {11-16},\n language = {english},\n location = {Marseille, France},\n note = {preprint available at \\url{https://arxiv.org/abs/1912.03184}},\n}",
+  "config_name": "default",
+  "dataset_name": "GoodNewsEveryone",
+  "dataset_size": 560351,
+  "description": "The Sotck Emotions dataset, as processed by 'emotion_datasets'. This dataset consists of comments collected from StockTwits, a financial social media platform, during the COVID19 pandemic.",
+  "download_checksums": {
+    "/tmp/tmpk64qbd9l/output.parquet": {
+      "num_bytes": 347838,
+      "checksum": null
+    }
+  },
+  "download_size": 347838,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "intensity": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "annoyance": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "guilt": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "love_including_like": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "negative_anticipation_including_pessimism": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "negative_surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "positive_anticipation_including_optimism": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "positive_surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "pride": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "shame": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "trust": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://www.ims.uni-stuttgart.de/forschung/ressourcen/korpora/goodnewseveryone/",
+  "license": "CC-BY 4.0",
+  "size_in_bytes": 908189,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 560351,
+      "num_examples": 5000,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

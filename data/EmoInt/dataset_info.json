@@ -1,0 +1,61 @@
+{
+  "builder_name": "parquet",
+  "citation": "@article{emotion_dataset_emoint,\n  title={WASSA-2017 shared task on emotion intensity},\n  author={Mohammad, Saif M and Bravo-Marquez, Felipe},\n  journal={arXiv preprint arXiv:1708.03700},\n  year={2017}\n}",
+  "config_name": "default",
+  "dataset_name": "EmoInt",
+  "dataset_size": 972221,
+  "description": "The WASSA-2017 Shared Task on Emotion Intensity (EmoInt) dataset, as processed using 'emotion_datasets'. Unlike other emotion datasets, texts in this dataset are annotated not just for the dominant emotion, but for their intensity as well.",
+  "download_checksums": {
+    "/tmp/tmpl30lxxbl/output.parquet": {
+      "num_bytes": 563533,
+      "checksum": null
+    }
+  },
+  "download_size": 563533,
+  "features": {
+    "ids": {
+      "feature": {
+        "dtype": "int32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html",
+  "license": "",
+  "size_in_bytes": 1535754,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 972221,
+      "num_examples": 6908,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

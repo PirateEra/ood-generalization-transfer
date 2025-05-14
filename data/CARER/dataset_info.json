@@ -1,0 +1,82 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_carer,\n title = '{CARER}: Contextualized Affect Representations for Emotion Recognition',\n author = 'Saravia, Elvis  and\n Liu, Hsien-Chi Toby  and\n Huang, Yen-Hao  and\n Wu, Junlin  and\n Chen, Yi-Shin',\n booktitle = 'Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing',\n month = oct # '-' # nov,\n year = '2018',\n address = 'Brussels, Belgium',\n publisher = 'Association for Computational Linguistics',\n url = 'https://www.aclweb.org/anthology/D18-1404',\n doi = '10.18653/v1/D18-1404',\n pages = '3687--3697',\n}",
+  "config_name": "split",
+  "dataset_name": "CARER",
+  "dataset_size": 2175901,
+  "description": "The CARER dataset, as processed using 'emotion_datasets'. CARER is a dataset of English Twitter messages with six basic emotions: anger, fear, joy, love, sadness, and surprise.",
+  "download_checksums": {
+    "hf://datasets/dair-ai/emotion@cab853a1dbdf4c42c2b3ef2173804746df8825fe/split/train-00000-of-00001.parquet": {
+      "num_bytes": 1030740,
+      "checksum": null
+    },
+    "hf://datasets/dair-ai/emotion@cab853a1dbdf4c42c2b3ef2173804746df8825fe/split/validation-00000-of-00001.parquet": {
+      "num_bytes": 127466,
+      "checksum": null
+    },
+    "hf://datasets/dair-ai/emotion@cab853a1dbdf4c42c2b3ef2173804746df8825fe/split/test-00000-of-00001.parquet": {
+      "num_bytes": 128987,
+      "checksum": null
+    }
+  },
+  "download_size": 1287193,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "love": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/dair-ai/emotion_dataset",
+  "license": "The dataset should be used for educational and research purposes only.",
+  "size_in_bytes": 3463094,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1743533,
+      "num_examples": 16000,
+      "dataset_name": "emotion"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 214945,
+      "num_examples": 2000,
+      "dataset_name": "emotion"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 217423,
+      "num_examples": 2000,
+      "dataset_name": "emotion"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

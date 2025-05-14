@@ -1,0 +1,102 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_us_vs_them,\n   title = \"Us vs. Them: A Dataset of Populist Attitudes, News Bias and Emotions\",\n   author = \"Huguet-Cabot, Pere-Llu{'\\i}s  and\n     Abadi, David  and\n     Fischer, Agneta  and\n     Shutova, Ekaterina\",\n   booktitle = \"Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume\",\n   month = apr,\n   year = \"2021\",\n   address = \"Online\",\n   publisher = \"Association for Computational Linguistics\",\n   url = \"http://dx.doi.org/10.18653/v1/2021.eacl-main.165\",\n   pages = \"1921--1945\"\n}",
+  "config_name": "default",
+  "dataset_name": "UsVsThem",
+  "dataset_size": 3424531,
+  "description": "The UsVsThem dataset, as processed by 'emotion_datasets'. Consisting of 6861 Reddit comments annotated for populist attitudes, this dataset was used to investigate the relationship between populist mindsets and social groups, as well as a range of emotions typically associated with these.",
+  "download_checksums": {
+    "/tmp/tmpalkrgw8u/output.parquet": {
+      "num_bytes": 2153680,
+      "checksum": null
+    }
+  },
+  "download_size": 2153680,
+  "features": {
+    "bias": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "group": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "usVSthem_scale": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "contempt": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "gratitude": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "guilt": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "happiness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "hope": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "pride": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "relief": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sympathy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "neutral": {
+      "dtype": "bool",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/LittlePea13/UsVsThem",
+  "license": "CC BY-NC 4.0",
+  "size_in_bytes": 5578211,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 3424531,
+      "num_examples": 6864,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

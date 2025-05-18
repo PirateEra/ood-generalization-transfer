@@ -1,0 +1,89 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_wassa2022,\n  title={WASSA 2022 shared task: Predicting empathy, emotion and personality in reaction to news stories},\n  author={Barriere, Valentin and Tafreshi, Shabnam and Sedoc, Jo{\\~a}o and Alqahtani, Sawsan},\n  booktitle={Proceedings of the 12th Workshop on Computational Approaches to Subjectivity, Sentiment \\& Social Media Analysis},\n  pages={214--227},\n  year={2022}\n}",
+  "config_name": "default",
+  "dataset_name": "WASSA22",
+  "dataset_size": 1041777,
+  "description": "The WASSA 2022 Shared Task dataset, as processed by 'emotion_datasets'. This task aims at developing models which can predict empathy and emotion based on essays written in reaction to news articles where there is harm to a person, group, or other.",
+  "download_checksums": {
+    "/tmp/tmp9_ok4rz_/output.parquet": {
+      "num_bytes": 625415,
+      "checksum": null
+    }
+  },
+  "download_size": 625415,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "article_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "neutral": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "labels": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://codalab.lisn.upsaclay.fr/competitions/834#learn_the_details-overview",
+  "license": "",
+  "size_in_bytes": 1667192,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1041777,
+      "num_examples": 2130,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  },
+  "label_type": "multi-class",
+  "emotion_labels": [
+    "anger",
+    "disgust",
+    "fear",
+    "joy",
+    "neutral",
+    "sadness",
+    "surprise"
+  ],
+  "num_labels": 7
+}

@@ -1,0 +1,89 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_canceremo,\n    title = '{C}ancer{E}mo: A Dataset for Fine-Grained Emotion Detection',\n    author = 'Sosea, Tiberiu  and\n      Caragea, Cornelia',\n    booktitle = 'Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)',\n    month = nov,\n    year = '2020',\n    address = 'Online',\n    publisher = 'Association for Computational Linguistics',\n    url = 'https://www.aclweb.org/anthology/2020.emnlp-main.715',\n    doi = '10.18653/v1/2020.emnlp-main.715',\n    pages = '8892--8904',\n}",
+  "config_name": "default",
+  "dataset_name": "CancerEmo",
+  "dataset_size": 1018018,
+  "description": "The CancerEmo dataset, as processed by 'emotion_datasets'. CancerEmo is an emotion dataset created from an online health community and annotated with eight fine-grained emotions.",
+  "download_checksums": {
+    "/tmp/tmp2mbu8x8l/output.parquet": {
+      "num_bytes": 658854,
+      "checksum": null
+    }
+  },
+  "download_size": 658854,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "anticipation": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "joy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sadness": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "trust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "labels": {
+      "feature": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    }
+  },
+  "homepage": "https://github.com/tsosea2/CancerEmo?tab=readme-ov-file",
+  "license": "",
+  "size_in_bytes": 1676872,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1018018,
+      "num_examples": 11642,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  },
+  "label_type": "multi-label",
+  "emotion_labels": [
+    "anger",
+    "anticipation",
+    "disgust",
+    "fear",
+    "joy",
+    "sadness",
+    "surprise",
+    "trust"
+  ],
+  "num_labels": 8
+}

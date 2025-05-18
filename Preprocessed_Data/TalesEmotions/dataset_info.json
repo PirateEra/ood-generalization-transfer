@@ -1,0 +1,68 @@
+{
+  "citation": "@inproceedings{emotion_dataset_tales_emotion,\n    title = 'Emotions from Text: Machine Learning for Text-based Emotion Prediction',\n    author = 'Alm, Cecilia Ovesdotter  and\n      Roth, Dan  and\n      Sproat, Richard',\n    editor = 'Mooney, Raymond  and\n      Brew, Chris  and\n      Chien, Lee-Feng  and\n      Kirchhoff, Katrin',\n    booktitle = 'Proceedings of Human Language Technology Conference and Conference on Empirical Methods in Natural Language Processing',\n    month = oct,\n    year = '2005',\n    address = 'Vancouver, British Columbia, Canada',\n    publisher = 'Association for Computational Linguistics',\n    url = 'https://aclanthology.org/H05-1073/',\n    pages = '579--586'\n}",
+  "dataset_name": "TalesEmotions",
+  "description": "The tales-emotions dataset, as processed by 'emotion_datasets'. Fairy tales annotated with sentence level emotions, by Cecilia Ovesdotter Alm.",
+  "features": {
+    "author": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "story": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "sent_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "angry": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "disgusted": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "fearful": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "happy": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "neutral": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "positively surprised": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "negatively surprised": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "labels": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "http://people.rc.rit.edu/~coagla/affectdata/index.html",
+  "license": "GPLv3",
+  "label_type": "multi-class",
+  "emotion_labels": [
+    "angry",
+    "disgusted",
+    "fearful",
+    "happy",
+    "neutral",
+    "positively surprised",
+    "negatively surprised"
+  ],
+  "num_labels": 7
+}

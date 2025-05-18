@@ -1,0 +1,81 @@
+{
+  "builder_name": "parquet",
+  "citation": "@inproceedings{emotion_dataset_emotion_stimulus,\n title={Detecting emotion stimuli in emotion-bearing sentences},\n author={Ghazi, Diman and Inkpen, Diana and Szpakowicz, Stan},\n booktitle={Computational Linguistics and Intelligent Text Processing: 16th International Conference, CICLing 2015, Cairo, Egypt, April 14-20, 2015, Proceedings, Part II 16},\n pages={152--165},\n year={2015},\n organization={Springer}\n}",
+  "config_name": "default",
+  "dataset_name": "EmotionStimulus",
+  "dataset_size": 259376,
+  "description": "The Emotion-Stimulus dataset, as processed by 'emotion_datasets'. This dataset contains sentences with some emotion-bearing lexical-unit, mapped to Ekman's basic emotions by volunteers.",
+  "download_checksums": {
+    "/tmp/tmpegtxtwi3/output.parquet": {
+      "num_bytes": 173166,
+      "checksum": null
+    }
+  },
+  "download_size": 173166,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "anger": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "disgust": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "fear": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "happy": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "sad": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "shame": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "surprise": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "labels": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://www.eecs.uottawa.ca/~diana/resources/emotion_stimulus_data/",
+  "license": "",
+  "size_in_bytes": 432542,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 259376,
+      "num_examples": 2407,
+      "dataset_name": "parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  },
+  "label_type": "multi-class",
+  "emotion_labels": [
+    "anger",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "shame",
+    "surprise"
+  ],
+  "num_labels": 7
+}

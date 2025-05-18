@@ -8,12 +8,15 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 import numpy as np
 from utils import convert_labels, tokenize_function, custom_metric
 from transformers import DataCollatorWithPadding
+import json
+import os
+
+from transformers import AutoModel, AutoTokenizer, AutoConfig
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Bert variant finetuning")
     parser.add_argument("--seed", type=int, default=1234)
-    parser.add_argument("--dataset_path", type=str, default="emotion_datasets/src/data/CancerEmo")
-    parser.add_argument("--model", type=str, default="bert-base-uncased")
+    parser.add_argument("--dataset_path", type=str, default="Preprocessed_Data/CancerEmo")
     parser.add_argument("--lr", type=float, default=5e-5)
     parser.add_argument("--batch_size", type=int, default=16)
     parser.add_argument("--epochs", type=int, default=5)
@@ -34,12 +37,15 @@ if __name__ == "__main__":
     set_seed(params.seed)
 
     #--------
-    # Dataset, and dataset preprocessing
+    # Dataset loading
     #--------
+    print("loading dataset...")
     dataset = load_from_disk(params.dataset_path)
-    labels = [label for label in dataset.features.keys() if label != "text"] # This could possible need changing based on various datasets
-    dataset = dataset.map(lambda examples: convert_labels(examples, labels=labels))
-    tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+
+    with open(params.dataset_path+"/dataset_info.json") as f:
+        info = json.load(f)
+
+    tokenizer = AutoTokenizer.from_pretrained("microsoft/deberta-v3-base", use_fast=False)
     tokenized_dataset = dataset.map(
         lambda examples: tokenize_function(examples, tokenizer=tokenizer),
         batched=True
@@ -52,14 +58,15 @@ if __name__ == "__main__":
     #--------
     # Training setup
     #--------
-    model = AutoModelForSequenceClassification.from_pretrained(params.model,
+    print("loading model...")
+    model = AutoModelForSequenceClassification.from_pretrained("microsoft/deberta-v3-base",
                                                             problem_type="multi_label_classification"
-                                                            , num_labels=len(labels))
+                                                            , num_labels=info["num_labels"])
     # print(model.config)
 
     if params.freeze_encoder:
         # Freeze all params
-        for param in model.bert.parameters():
+        for param in model.deberta.parameters():
             param.requires_grad = False
         # Make sure the classifier is NOT frozen
         for param in model.classifier.parameters():
@@ -69,6 +76,7 @@ if __name__ == "__main__":
 
 
     # The training arguments
+    print("loading training args...")
     training_args = TrainingArguments(
         output_dir= params.output_dir,      
         eval_strategy="epoch",      # Evaluate at the end of each epoch
@@ -100,6 +108,7 @@ if __name__ == "__main__":
     #--------
     # Training
     #--------
+    print("Starting training...")
     trainer.train()
 
 

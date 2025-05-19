@@ -1,4 +1,4 @@
-from sklearn.metrics import f1_score, precision_score, recall_score
+from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, mean_squared_error, mean_absolute_error, r2_score
 import numpy as np
 
 def convert_labels(example, labels):
@@ -8,7 +8,7 @@ def convert_labels(example, labels):
 def tokenize_function(examples, tokenizer):
     return tokenizer(examples["text"], padding="max_length", truncation=True, max_length=128) # We can play a bit with this value, doesnt have to be 128
 
-def custom_metric(pred):
+def multi_label_metric(pred):
 
     logits = pred.predictions
     labels = pred.label_ids
@@ -23,4 +23,28 @@ def custom_metric(pred):
         "precision_micro": precision_score(labels, preds, average="micro"),
         "recall_micro": recall_score(labels, preds, average="micro"),
         "subset_accuracy": exact_match
+    }
+
+def multi_class_metric(pred):
+
+    logits = pred.predictions
+    labels = pred.label_ids
+    preds = np.argmax(logits, axis=1)
+
+    return {
+        "accuracy": accuracy_score(labels, preds),
+        "f1_micro": f1_score(labels, preds, average="micro"),
+        "f1_macro": f1_score(labels, preds, average="macro"),
+        "precision_micro": precision_score(labels, preds, average="micro"),
+        "recall_micro": recall_score(labels, preds, average="micro"),
+    }
+
+def multi_variate_metric(pred):
+    preds = pred.predictions
+    labels = pred.label_ids
+
+    return {
+        "mse": mean_squared_error(labels, preds),
+        "mae": mean_absolute_error(labels, preds),
+        "r2": r2_score(labels, preds),
     }

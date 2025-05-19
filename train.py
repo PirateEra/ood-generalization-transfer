@@ -28,7 +28,6 @@ def parse_args():
     parser.add_argument("--fp16", type=bool, default=False)
     parser.add_argument("--output_dir", type=str, default="./results")
     parser.add_argument("--logging_dir", type=str, default="./logs")
-    parser.add_argument("--freeze_encoder", type=bool, default=False)
     parser.add_argument("--test_size", type=float, default=0.2)
 
     args, _ = parser.parse_known_args()
@@ -103,24 +102,13 @@ if __name__ == "__main__":
     model = AutoModelForSequenceClassification.from_pretrained("microsoft/deberta-v3-base",
                                                             problem_type=problem_type
                                                             , num_labels=info["num_labels"])
-    # print(model.config)
-
-    if params.freeze_encoder:
-        # Freeze all params
-        for param in model.deberta.parameters():
-            param.requires_grad = False
-        # Make sure the classifier is NOT frozen
-        for param in model.classifier.parameters():
-            param.requires_grad = True
-    
-        # print(f"Trainable parameters: {sum(p.numel() for p in model.parameters() if p.requires_grad)}")
 
 
     # The training arguments
     print("loading training args...")
     dataset_name = params.dataset_path.split("/")[-1]
     training_args = TrainingArguments(
-        output_dir= f"{params.output_dir}/dataset_{dataset_name}_seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",      
+        output_dir= f"{params.output_dir}/{dataset_name}/seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",      
         eval_strategy="epoch",      # Evaluate at the end of each epoch
         save_strategy="epoch",
         learning_rate=params.lr,              

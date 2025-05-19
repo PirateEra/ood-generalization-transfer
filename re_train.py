@@ -18,6 +18,7 @@ from transformers import AutoModel, AutoTokenizer, AutoConfig
 def parse_args():
     parser = argparse.ArgumentParser(description="Bert variant finetuning")
     parser.add_argument("--seed", type=int, default=1234)
+    parser.add_argument("--checkpoint_path", type=str)
     parser.add_argument("--dataset_path", type=str, default="Preprocessed_Data/CancerEmo")
     parser.add_argument("--dynamic_lr", type=bool, default=True)
     parser.add_argument("--lr", type=float, default=5e-5)
@@ -26,9 +27,8 @@ def parse_args():
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--weight_decay", type=float, default=0.01)
     parser.add_argument("--fp16", type=bool, default=False)
-    parser.add_argument("--output_dir", type=str, default="./results")
+    parser.add_argument("--output_dir", type=str, default="./retrained_results")
     parser.add_argument("--logging_dir", type=str, default="./logs")
-    parser.add_argument("--freeze_encoder", type=bool, default=False)
     parser.add_argument("--test_size", type=float, default=0.2)
 
     args, _ = parser.parse_known_args()
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     with open(params.dataset_path+"/dataset_info.json") as f:
         info = json.load(f)
 
-    tokenizer = AutoTokenizer.from_pretrained("microsoft/deberta-v3-base", use_fast=False)
+    tokenizer = AutoTokenizer.from_pretrained(params.checkpoint_path)
     tokenized_dataset = dataset.map(
         lambda examples: tokenize_function(examples, tokenizer=tokenizer),
         batched=True
@@ -99,19 +99,28 @@ if __name__ == "__main__":
     log_times_per_epoch = 5
     logging_steps = max(1, steps_per_epoch // log_times_per_epoch) # This implies we log x times per epoch
 
-    print(f"loading model with problem type {problem_type}...")
-    model = AutoModelForSequenceClassification.from_pretrained("microsoft/deberta-v3-base",
-                                                            problem_type=problem_type
-                                                            , num_labels=info["num_labels"])
-    # print(model.config)
+    print(f"loading checkpoint with problem type {problem_type}...")
+    # load the encoder from the checkpoint
+    encoder = AutoModel.from_pretrained(params.checkpoint_path)
 
-    if params.freeze_encoder:
-        # Freeze all params
-        for param in model.deberta.parameters():
-            param.requires_grad = False
-        # Make sure the classifier is NOT frozen
-        for param in model.classifier.parameters():
-            param.requires_grad = True
+    # Load deberta v3 (for a new classifier)
+    model = AutoModelForSequenceClassification.from_pretrained(
+        "microsoft/deberta-v3-base",
+        num_labels=info["num_labels"],
+        problem_type=problem_type,
+    )
+
+    # Replace the encoder of the new model with the trained (on a different task)
+    model.deberta = encoder
+
+    # Freeze encoder
+    for param in model.deberta.parameters():
+        param.requires_grad = False
+
+    # Unfreeze classifier to make sure it can be trained
+    for param in model.classifier.parameters():
+        param.requires_grad = True
+
     
         # print(f"Trainable parameters: {sum(p.numel() for p in model.parameters() if p.requires_grad)}")
 
@@ -120,7 +129,7 @@ if __name__ == "__main__":
     print("loading training args...")
     dataset_name = params.dataset_path.split("/")[-1]
     training_args = TrainingArguments(
-        output_dir= f"{params.output_dir}/dataset_{dataset_name}_seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",      
+        output_dir= f"{params.output_dir}/{dataset_name}/seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",      
         eval_strategy="epoch",      # Evaluate at the end of each epoch
         save_strategy="epoch",
         learning_rate=params.lr,              

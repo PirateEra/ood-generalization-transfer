@@ -3,3 +3,5 @@
 /__pycache__
 *.Identifier
 /results
+/eval_results
+/retrained_results

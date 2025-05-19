@@ -1,5 +1,6 @@
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, mean_squared_error, mean_absolute_error, r2_score
 import numpy as np
+import re
 
 def convert_labels(example, labels):
     example["labels"] = [float(bool(example[label])) for label in labels]
@@ -48,3 +49,31 @@ def multi_variate_metric(pred):
         "mae": mean_absolute_error(labels, preds),
         "r2": r2_score(labels, preds),
     }
+
+
+# Fucntion to get the values from a checkpoint location (such as the used seed etc)
+def parse_checkpoint_string(path):
+    match = re.search(r'dataset_[^/]+', path) # Get the dataset information (starting at dataset_ ending at /)
+    if not match:
+        return {}
+
+    config_part = match.group()
+    parts = config_part.split('_')
+
+    result = {}
+    for i in range(0, len(parts) - 1, 2):
+        key = parts[i]
+        value = try_parse_value(parts[i + 1])
+        result[key] = value
+    result["path"] = config_part
+    return result
+
+
+def try_parse_value(value):
+    try:
+        return int(value)
+    except ValueError:
+        try:
+            return float(value)
+        except ValueError:
+            return value

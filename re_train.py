@@ -127,9 +127,10 @@ if __name__ == "__main__":
 
     # The training arguments
     print("loading training args...")
+    model_info = parse_checkpoint_string(params.checkpoint_path)
     dataset_name = params.dataset_path.split("/")[-1]
     training_args = TrainingArguments(
-        output_dir= f"{params.output_dir}/retraining/{dataset_name}/dataset_{dataset_name}_seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",      
+        output_dir= f"{params.output_dir}/retraining/{model_info["path"]}/{dataset_name}/dataset_{dataset_name}_seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",      
         eval_strategy="epoch",      # Evaluate at the end of each epoch
         save_strategy="epoch",
         learning_rate=params.lr,              

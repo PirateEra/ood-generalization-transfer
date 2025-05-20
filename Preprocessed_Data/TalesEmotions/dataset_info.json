@@ -64,5 +64,5 @@
     "positively surprised",
     "negatively surprised"
   ],
-  "num_labels": 7
+  "num_labels": 8
 }

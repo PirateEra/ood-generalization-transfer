@@ -16,11 +16,11 @@ module load Anaconda3/2024.06-1
 cd $HOME/ood-generalization-transfer
 source activate ACTS
 srun python re_train.py --dataset_path "Preprocessed_Data/EmoBank" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/EmotionStimulus" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/GoodNewsEveryone" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/Semeval2018Intensity" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/SentimentalLIAR" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/TalesEmotions" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/UsVsThem" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/WASSA22" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
-# srun python re_train.py --dataset_path "Preprocessed_Data/XED" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/EmotionStimulus" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/GoodNewsEveryone" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/Semeval2018Intensity" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/SentimentalLIAR" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/TalesEmotions" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/UsVsThem" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/WASSA22" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096
+srun python re_train.py --dataset_path "Preprocessed_Data/XED" --checkpoint_path results/training/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-2096

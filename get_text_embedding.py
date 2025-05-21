@@ -141,12 +141,12 @@ if __name__ == "__main__":
 
     # Get the task embedding
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    task_embedding = compute_task_embedding_from_trainer(trainer, test_dataset, info["label_type"], device)
-    print("Task embedding shape:", task_embedding.shape)
+    text_embedding = compute_text_embedding_from_trainer(trainer, test_dataset, info["label_type"], device)
+    print("Text embedding shape:", text_embedding.shape)
     model_info = parse_checkpoint_string(params.checkpoint_path)
     dataset_name = params.dataset_path.split("/")[-1]
 
     save_path = f"{params.output_dir}/{dataset_name}/{model_info["path"]}/"
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
-    torch.save(task_embedding, f"{save_path}/task_embedding.pt")
+    torch.save(text_embedding, f"{save_path}/text_embedding.pt")
     print("Done.")

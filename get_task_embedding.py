@@ -67,8 +67,12 @@ def compute_task_embedding_from_trainer(trainer, dataset, label_type, device):
             if param.grad is not None:
                 grads.append((param.grad.detach() ** 2).flatten()) # Flatten and square the gradients of each parameter
 
-        grads = torch.cat(grads)
+        grads = torch.cat(grads).detach().cpu()
         squared_gradients.append(grads) # Add this batch of squared gradients to the array
+
+        # Clear memory, so we have enough for the next batch (snellius seemed to have issues)
+        del loss, outputs, logits, grads
+        torch.cuda.empty_cache()
     
     stacked_gradients = torch.stack(squared_gradients)
     task_embedding = stacked_gradients.mean(dim=0) # .mean() is to take the average over all computed batches

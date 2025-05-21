@@ -47,8 +47,8 @@ def compute_task_embedding_from_trainer(trainer, dataset, label_type, device):
 
         # Forward pass
         outputs = encoder(**inputs)
-        cls_embeddings = outputs.last_hidden_state[:, 0, :]  # Get the last layer (the one before the classifier)
-        logits = classifier(cls_embeddings) # Get the logits, which we need to compute the loss (which gives us the gradients)
+        pooled = model.pooler(outputs.last_hidden_state)  # use the pooler to get the info the classifier needs, i do this because we also train the pooler when transfer learning, so this gives the best accurate task representation
+        logits = classifier(pooled) # Get the logits, which we need to compute the loss (which gives us the gradients)
 
         # This step needs to be dependent on the task, so for multi-label/multi-class/multi-variate u need a different loss function
         if label_type == 'multi-label':
@@ -67,7 +67,6 @@ def compute_task_embedding_from_trainer(trainer, dataset, label_type, device):
                 grads.append((param.grad.detach() ** 2).flatten()) # Flatten and square the gradients of each parameter
 
         grads = torch.cat(grads)
-        print(grads.shape)
         squared_gradients.append(grads) # Add this batch of squared gradients to the array
     
     stacked_gradients = torch.stack(squared_gradients)

@@ -29,10 +29,11 @@ def compute_task_embedding_from_trainer(trainer, dataset, label_type, device):
 
     dataloader = trainer.get_eval_dataloader(dataset) # Create a dataloader so we can handle batches of data
 
-    squared_gradients = []
+    task_embedding = None
+    count = 0
 
     for i, batch in enumerate(dataloader):
-        if i % 25 == 0: # print every 25 batches
+        if i % 1 == 0: # print every 20 batches
             print(f"handling batch {i} out of {len(dataloader)}")
         
         # Move the input to the right device
@@ -61,7 +62,7 @@ def compute_task_embedding_from_trainer(trainer, dataset, label_type, device):
             loss_fn = torch.nn.functional.mse_loss
 
         loss = loss_fn(logits, labels)
-        loss.backward()
+        loss.backward(retain_graph=False)
 
         grads = []
         for param in encoder.encoder.parameters():
@@ -69,14 +70,19 @@ def compute_task_embedding_from_trainer(trainer, dataset, label_type, device):
                 grads.append((param.grad.detach() ** 2).flatten()) # Flatten and square the gradients of each parameter
 
         grads = torch.cat(grads).detach().cpu()
-        squared_gradients.append(grads) # Add this batch of squared gradients to the array
+
+        # Save the task embedding of this batch, and essentially add all batches together (in the end we divide to get the mean)
+        if task_embedding is None:
+            task_embedding = grads
+        else:
+            task_embedding = task_embedding + grads
+        count += 1
 
         # Clear memory, so we have enough for the next batch (snellius seemed to have issues)
         del loss, outputs, logits, grads
         torch.cuda.empty_cache()
     
-    stacked_gradients = torch.stack(squared_gradients)
-    task_embedding = stacked_gradients.mean(dim=0) # .mean() is to take the average over all computed batches
+    task_embedding /= count # Divide by the amount of batches we handled
 
     return task_embedding
 

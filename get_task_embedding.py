@@ -32,7 +32,8 @@ def compute_task_embedding_from_trainer(trainer, dataset, label_type, device):
     squared_gradients = []
 
     for i, batch in enumerate(dataloader):
-        print(f"handling batch {i} out of {len(dataloader)}")
+        if i % 25 == 0: # print every 25 batches
+            print(f"handling batch {i} out of {len(dataloader)}")
         
         # Move the input to the right device
         input_ids = batch["input_ids"].to(device)

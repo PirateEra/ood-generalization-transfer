@@ -6,3 +6,4 @@
 /eval_results
 /retrained_results
 *.Identifier
+/task_embeddings

@@ -116,7 +116,7 @@ if __name__ == "__main__":
         per_device_eval_batch_size=params.batch_size,    
         num_train_epochs=params.epochs,                  
         weight_decay=params.weight_decay,                # Regularization, prevent the model from learning too large weights
-        save_total_limit=2,                              # Limit checkpoints to save space
+        save_total_limit=1,                              # Limit checkpoints to save space
         load_best_model_at_end=True,                     
         logging_dir=f"{params.logging_dir}/{dataset_name}/dataset_{dataset_name}_seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",             
         logging_steps=logging_steps,                     # dynamically log 5 times per epoch    

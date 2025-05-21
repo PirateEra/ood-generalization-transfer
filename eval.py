@@ -16,7 +16,7 @@ import os
 from transformers import AutoModel, AutoTokenizer, AutoConfig
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Bert variant finetuning")
+    parser = argparse.ArgumentParser(description="Bert variant evaluation")
     parser.add_argument("--dataset_path", type=str, default="Preprocessed_Data/CancerEmo")
     parser.add_argument("--checkpoint_path", type=str)
     parser.add_argument("--output_dir", type=str, default="./eval_results")

@@ -16,7 +16,7 @@ import os
 from transformers import AutoModel, AutoTokenizer, AutoConfig
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Bert variant finetuning")
+    parser = argparse.ArgumentParser(description="Bert variant classifier finetuning")
     parser.add_argument("--seed", type=int, default=1234)
     parser.add_argument("--checkpoint_path", type=str)
     parser.add_argument("--dataset_path", type=str, default="Preprocessed_Data/CancerEmo")
@@ -101,7 +101,7 @@ if __name__ == "__main__":
 
     print(f"loading checkpoint with problem type {problem_type}...")
     # load the encoder from the checkpoint
-    encoder = AutoModel.from_pretrained(params.checkpoint_path)
+    checkpoint_model = AutoModelForSequenceClassification.from_pretrained(params.checkpoint_path)
 
     # Load deberta v3 (for a new classifier)
     model = AutoModelForSequenceClassification.from_pretrained(
@@ -110,14 +110,16 @@ if __name__ == "__main__":
         problem_type=problem_type,
     )
 
-    # Replace the encoder of the new model with the trained (on a different task)
-    model.deberta = encoder
+    # Replace the encoder (deberta model) of the new model with the trained (on a different task)
+    model.deberta = checkpoint_model.deberta # This implies the pooler and classifier are freshly initialized
 
-    # Freeze encoder
+    # Freeze encoder part (deberta) so only the classifier and pooler will learn
     for param in model.deberta.parameters():
         param.requires_grad = False
 
     # Unfreeze classifier to make sure it can be trained
+    for param in model.pooler.parameters():
+        param.requires_grad = True
     for param in model.classifier.parameters():
         param.requires_grad = True
 
@@ -138,7 +140,7 @@ if __name__ == "__main__":
         per_device_eval_batch_size=params.batch_size,
         num_train_epochs=params.epochs,               
         weight_decay=params.weight_decay,                # Regularization, prevent the model from learning too large weights
-        save_total_limit=2,               # Limit checkpoints to save space
+        save_total_limit=1,               # Limit checkpoints to save space
         load_best_model_at_end=True,
         logging_dir=f"{params.logging_dir}/{dataset_name}/dataset_{dataset_name}_seed_{params.seed}_testsize_{params.test_size}_bs_{params.batch_size}",             
         logging_steps=logging_steps,            # dynamically log 5 times per epoch    

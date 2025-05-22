@@ -82,8 +82,8 @@ if __name__ == "__main__":
 
     # Plot each datasets embedding vector
     for i, label in enumerate(labels):
-        print(label)
-        category = datasets.get(label, 'unknown')
+        dataset_name = os.path.splitext(label)[0]
+        category = datasets.get(dataset_name, 'unknown')
 
         color = colors.get(category, 'gray')
         marker = markers.get(category, 'x')
@@ -94,7 +94,7 @@ if __name__ == "__main__":
                     alpha=0.8, 
                     label=category)
 
-        plt.text(X_tsne[i, 0]+0.5, X_tsne[i, 1]+0.5, label, fontsize=8)
+        plt.text(X_tsne[i, 0]+0.5, X_tsne[i, 1]+0.5, dataset_name, fontsize=8)
     
     plt.xticks([])
     plt.yticks([])

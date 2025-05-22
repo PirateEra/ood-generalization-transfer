@@ -21,57 +21,41 @@ def compute_text_embedding_from_trainer(trainer, dataset, label_type, device):
     model.eval()
 
     encoder = model.deberta
-    classifier = model.classifier
-
-    # Make sure the encoder has gradient calculations active
-    for param in encoder.parameters():
-        param.requires_grad = True
 
     dataloader = trainer.get_eval_dataloader(dataset) # Create a dataloader so we can handle batches of data
 
-    squared_gradients = []
+    text_embedding = None
+    count = 0
+    with torch.no_grad():
+        for i, batch in enumerate(dataloader):
+            if i % 1 == 0: # print every 20 batches
+                print(f"handling batch {i} out of {len(dataloader)}")
+            
+            # Move the input to the right device
+            input_ids = batch["input_ids"].to(device)
+            attention_mask = batch["attention_mask"].to(device)
+            inputs = {
+                "input_ids": input_ids,
+                "attention_mask": attention_mask
+            }
 
-    for i, batch in enumerate(dataloader):
+            # Forward pass
+            outputs = encoder(**inputs)
+            pooled = model.pooler(outputs.last_hidden_state).detach()  # use the pooler to get the info the classifier needs, i do this because we also train the pooler when transfer learning, so this gives the best accurate task representation
+            
+            batch_sum = pooled.sum(dim=0)
+            batch_size = pooled.size(0)
+
+            # Save the task embedding of this batch, and essentially add all batches together (in the end we divide to get the mean)
+            if text_embedding is None:
+                text_embedding = batch_sum
+            else:
+                text_embedding += batch_sum
+            count += batch_size
         
-        # Move the input to the right device
-        input_ids = batch["input_ids"].to(device)
-        attention_mask = batch["attention_mask"].to(device)
-        inputs = {
-            "input_ids": input_ids,
-            "attention_mask": attention_mask
-        }
-        labels = batch['labels'].to(device)
+        text_embedding /= count # Divide by the amount of batches we handled
 
-        encoder.zero_grad() # Make sure to clear out the gradients before computing new
-        classifier.zero_grad()
-
-        # Forward pass
-        outputs = encoder(**inputs)
-        cls_embeddings = outputs.last_hidden_state[:, 0, :]  # Get the last layer (the one before the classifier)
-        logits = classifier(cls_embeddings) # Get the logits, which we need to compute the loss (which gives us the gradients)
-
-        # This step needs to be dependent on the task, so for multi-label/multi-class/multi-variate u need a different loss function
-        if label_type == 'multi-label':
-            loss_fn = torch.nn.functional.binary_cross_entropy_with_logits
-        elif label_type == 'multi-class':
-            loss_fn = torch.nn.functional.cross_entropy
-        elif label_type == 'multi-variate':
-            loss_fn = torch.nn.functional.mse_loss
-
-        loss = loss_fn(logits, labels)
-        loss.backward()
-
-        grads = []
-        for param in encoder.parameters():
-            if param.grad is not None:
-                grads.append((param.grad.detach() ** 2).flatten()) # Flatten and square the gradients of each parameter
-
-        squared_gradients.append(torch.cat(grads)) # Add this batch of squared gradients to the array
-    
-    stacked_gradients = torch.stack(squared_gradients)
-    task_embedding = stacked_gradients.mean(dim=0) # .mean() is to take the average over all computed batches
-
-    return task_embedding
+        return text_embedding
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Bert variant task embedding")

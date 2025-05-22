@@ -61,7 +61,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Bert variant task embedding")
     parser.add_argument("--dataset_path", type=str, default="Preprocessed_Data/CancerEmo")
     parser.add_argument("--checkpoint_path", type=str)
-    parser.add_argument("--output_dir", type=str, default="./task_embeddings")
+    parser.add_argument("--output_dir", type=str, default="./text_embeddings")
 
     args, _ = parser.parse_known_args()
 

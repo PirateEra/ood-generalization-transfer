@@ -83,6 +83,7 @@ if __name__ == "__main__":
     # Plot each datasets embedding vector
     for i, label in enumerate(labels):
         category = datasets.get(label, 'unknown')
+        print(category)
 
         color = colors.get(category, 'gray')
         marker = markers.get(category, 'x')

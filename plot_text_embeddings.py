@@ -120,7 +120,7 @@ if __name__ == "__main__":
 
     # The legend to show the different type of text
     legend = plt.legend(title='Task Type', fontsize=10, title_fontsize=12,
-                        loc='upper right', frameon=True, edgecolor='black')
+                        loc='lower right', frameon=True, edgecolor='black')
     legend.get_frame().set_facecolor('#f8f8f8')
 
     plt.tight_layout()

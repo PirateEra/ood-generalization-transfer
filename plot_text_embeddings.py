@@ -108,8 +108,8 @@ if __name__ == "__main__":
     # Expand the plot a bit to make it look nicer
     x_min, x_max = X_tsne[:, 0].min(), X_tsne[:, 0].max()
     y_min, y_max = X_tsne[:, 1].min(), X_tsne[:, 1].max()
-    plt.xlim(x_min - 5, x_max + 5)
-    plt.ylim(y_min - 5, y_max + 5)
+    plt.xlim(x_min - 10, x_max + 10)
+    plt.ylim(y_min - 10, y_max + 10)
 
     plt.xticks([])
     plt.yticks([])
@@ -119,7 +119,7 @@ if __name__ == "__main__":
             pad=20, loc='center', backgroundcolor='#f0f0f0')
 
     # The legend to show the different type of text
-    legend = plt.legend(title='Text Type', fontsize=10, title_fontsize=12,
+    legend = plt.legend(title='Task Type', fontsize=10, title_fontsize=12,
                         loc='upper right', frameon=True, edgecolor='black')
     legend.get_frame().set_facecolor('#f8f8f8')
 

@@ -52,16 +52,53 @@ if __name__ == "__main__":
     #---
     # (save) Plot the final embeddings
     #---
+    datasets = {
+        'XED': 'multi-label',
+        'WASSA22': 'multi-class',
+        'UsVsThem': 'multi-label',
+        'TalesEmotions': 'multi-class',
+        'SentimentalLIAR': 'multi-variate',
+        'Semeval2018Intensity': 'multi-variate',
+        'GoodNewsEveryone': 'multi-class',
+        'EmotionStimulus': 'multi-class',
+        'EmoBank': 'multi-variate',
+        'CancerEmo': 'multi-label',
+    }
+
+    categories = ['multi-label', 'multi-class', 'multi-variate']
+    colors = {
+            'multi-label': 'green',
+            'multi-class': 'blue',
+            'multi-variate': 'red',
+
+        }
+    markers = {
+        'multi-label': 'o',
+        'multi-class': 's',
+        'multi-variate': '^',
+    }
+
     plt.figure(figsize=(10, 8))
-    plt.scatter(X_tsne[:, 0], X_tsne[:, 1], s=100, alpha=0.8)
 
+    # Plot each datasets embedding vector
     for i, label in enumerate(labels):
-        plt.annotate(label, (X_tsne[i, 0], X_tsne[i, 1]), fontsize=9)
+        category = datasets.get(label, 'unknown')
 
-    plt.title("t-SNE Plot of Task Embeddings")
-    plt.xlabel("Component 1")
-    plt.ylabel("Component 2")
-    plt.grid(True)
+        color = colors.get(category, 'gray')
+        marker = markers.get(category, 'x')
+
+        plt.scatter(X_tsne[i, 0], X_tsne[i, 1], 
+                    color=color, marker=marker, 
+                    s=100, 
+                    alpha=0.8, 
+                    label=category)
+
+        plt.text(X_tsne[i, 0]+0.5, X_tsne[i, 1]+0.5, label, fontsize=8)
+    
+    plt.xticks([])
+    plt.yticks([])
+
+    plt.title("Task Embedding Space")
     plt.tight_layout()
 
     output_path = "task_embeddings_self.png"

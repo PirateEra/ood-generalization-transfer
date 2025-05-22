@@ -78,9 +78,11 @@ if __name__ == "__main__":
         'multi-variate': '^',
     }
 
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(12, 10))
 
-    # Plot each datasets embedding vector
+    plotted_categories = set() # For the legend
+
+    # Plot each dataset embedding vector
     for i, label in enumerate(labels):
         dataset_name = os.path.splitext(label)[0]
         category = datasets.get(dataset_name, 'unknown')
@@ -88,18 +90,39 @@ if __name__ == "__main__":
         color = colors.get(category, 'gray')
         marker = markers.get(category, 'x')
 
+        # keep track of the legend info
+        show_label = category not in plotted_categories
+        plotted_categories.add(category)
+
         plt.scatter(X_tsne[i, 0], X_tsne[i, 1], 
                     color=color, marker=marker, 
                     s=100, 
-                    alpha=0.8, 
-                    label=category)
+                    alpha=0.9, 
+                    edgecolors='black',
+                    linewidths=1.2,
+                    label=category if show_label else None)
 
-        plt.text(X_tsne[i, 0]+0.5, X_tsne[i, 1]+0.5, dataset_name, fontsize=8)
-    
+        plt.text(X_tsne[i, 0]+1, X_tsne[i, 1]+1, dataset_name,
+                fontsize=9, weight='bold', color='black')
+
+    # Expand the plot a bit to make it look nicer
+    x_min, x_max = X_tsne[:, 0].min(), X_tsne[:, 0].max()
+    y_min, y_max = X_tsne[:, 1].min(), X_tsne[:, 1].max()
+    plt.xlim(x_min - 5, x_max + 5)
+    plt.ylim(y_min - 5, y_max + 5)
+
     plt.xticks([])
     plt.yticks([])
 
-    plt.title("Task Embedding Space")
+    # The plot title with a nice background
+    plt.title("Task Embedding Space", fontsize=20, weight='bold', color='black',
+            pad=20, loc='center', backgroundcolor='#f0f0f0')
+
+    # The legend to show the different type of tasks
+    legend = plt.legend(title='Task Type', fontsize=10, title_fontsize=12,
+                        loc='upper right', frameon=True, edgecolor='black')
+    legend.get_frame().set_facecolor('#f8f8f8')
+
     plt.tight_layout()
 
     output_path = "task_embeddings_self.png"

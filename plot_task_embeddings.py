@@ -58,7 +58,7 @@ if __name__ == "__main__":
         'UsVsThem': 'multi-label',
         'TalesEmotions': 'multi-class',
         'SentimentalLIAR': 'multi-variate',
-        'Semeval2018Intensity': 'multi-variate',
+        'Semeval2018': 'multi-variate',
         'GoodNewsEveryone': 'multi-class',
         'EmotionStimulus': 'multi-class',
         'EmoBank': 'multi-variate',

@@ -39,14 +39,14 @@ if __name__ == "__main__":
     # Perform PCA to reduce dimensionality
     #---
     print("Reducing dimensions with PCA...")
-    pca = PCA(n_components=5)
+    pca = PCA(n_components=5, random_state=1234)
     X_pca = pca.fit_transform(X)
 
     #---
     # Perform t-SNE to reduce to 2d
     #---
     print("Applying t-SNE...")
-    tsne = TSNE(n_components=2, perplexity=5, n_iter=1000, random_state=42)
+    tsne = TSNE(n_components=2, perplexity=5, n_iter=1000, random_state=1234)
     X_tsne = tsne.fit_transform(X_pca)
 
     #---

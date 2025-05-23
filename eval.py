@@ -19,6 +19,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Bert variant evaluation")
     parser.add_argument("--dataset_path", type=str, default="Preprocessed_Data/CancerEmo")
     parser.add_argument("--checkpoint_path", type=str)
+    parser.add_argument("--directory_path", type=bool, default=False)
     parser.add_argument("--output_dir", type=str, default="./eval_results")
 
     args, _ = parser.parse_known_args()
@@ -27,12 +28,12 @@ def parse_args():
 
 if __name__ == "__main__":
     params = parse_args()
-
     #----
     # Load the dataset for evaluation and the model from the checkpoint
     #----
     print("Loading the model")
     model_info = parse_checkpoint_string(params.checkpoint_path) # Get the needed info such as the seed from the checkpoint path
+    
     set_seed(model_info["seed"])
     # Get the model and tokenizer from the checkpoint
     model = AutoModelForSequenceClassification.from_pretrained(params.checkpoint_path)
@@ -84,6 +85,7 @@ if __name__ == "__main__":
     print("Evaluating")
 
     results = trainer.evaluate(test_dataset)
-    with open(params.output_dir+f"/{model_info["path"]}_evaluation.json", "w") as f:
+    dataset_name = params.dataset_path.split("/")[-1]
+    with open(params.output_dir+f"/{dataset_name}/{model_info[dataset]}_evaluation.json", "w") as f:
         json.dump(results, f, indent=4)
     print(results)

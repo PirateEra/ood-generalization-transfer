@@ -7,3 +7,4 @@
 /retrained_results
 *.Identifier
 /task_embeddings
+/__pycache__

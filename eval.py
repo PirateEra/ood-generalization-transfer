@@ -87,9 +87,9 @@ if __name__ == "__main__":
     results = trainer.evaluate(test_dataset)
     dataset_name = params.dataset_path.split("/")[-1]
 
-    output_dir = params.output_dir+f"/{dataset_name}/{model_info["dataset"]}_evaluation.json"
+    output_dir = params.output_dir+f"/{dataset_name}"
     os.makedirs(output_dir, exist_ok=True)
-
-    with open(output_dir, "w") as f:
+    output_file = f"{output_dir}/{model_info["dataset"]}_evaluation.json"
+    with open(output_file, "w") as f:
         json.dump(results, f, indent=4)
     print(results)

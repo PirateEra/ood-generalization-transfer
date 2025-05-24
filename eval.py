@@ -86,6 +86,6 @@ if __name__ == "__main__":
 
     results = trainer.evaluate(test_dataset)
     dataset_name = params.dataset_path.split("/")[-1]
-    with open(params.output_dir+f"/{dataset_name}/{model_info[dataset]}_evaluation.json", "w") as f:
+    with open(params.output_dir+f"/{dataset_name}/{model_info["dataset"]}_evaluation.json", "w") as f:
         json.dump(results, f, indent=4)
     print(results)

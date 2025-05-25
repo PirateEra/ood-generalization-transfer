@@ -2,11 +2,11 @@
 
 #SBATCH --partition=gpu_mig
 #SBATCH --gpus=1
-#SBATCH --job-name=re_train_emotionstimulus
+#SBATCH --job-name=eval__emotionstimulus
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=9
 #SBATCH --time=12:00:00
-#SBATCH --output=;re_train_emotionstimulus%A.out
+#SBATCH --output=;eval__emotionstimulus%A.out
 
 module purge
 module load 2024
@@ -15,12 +15,13 @@ module load Anaconda3/2024.06-1
 # Your job starts in the directory where you call sbatch
 cd $HOME/ood-generalization-transfer
 source activate ACTS
-srun python re_train.py --dataset_path "Preprocessed_Data/EmoBank" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/CancerEmo" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/GoodNewsEveryone" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/Semeval2018Intensity" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/SentimentalLIAR" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/TalesEmotions" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/UsVsThem" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/WASSA22" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
-srun python re_train.py --dataset_path "Preprocessed_Data/XED" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
+srun python eval.py --dataset_path "Preprocessed_Data/EmotionStimulus" --checkpoint_path results/training/EmotionStimulus/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/checkpoint-1519
+srun python eval.py --dataset_path "Preprocessed_Data/EmoBank" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/EmoBank/dataset_EmoBank_seed_1234_testsize_0.2_bs_16/checkpoint-4530
+srun python eval.py --dataset_path "Preprocessed_Data/CancerEmo" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/CancerEmo/dataset_CancerEmo_seed_1234_testsize_0.2_bs_16/checkpoint-524
+srun python eval.py --dataset_path "Preprocessed_Data/GoodNewsEveryone" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/GoodNewsEveryone/dataset_GoodNewsEveryone_seed_1234_testsize_0.2_bs_8/checkpoint-3150
+srun python eval.py --dataset_path "Preprocessed_Data/Semeval2018Intensity" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/Semeval2018Intensity/dataset_Semeval2018Intensity_seed_1234_testsize_0.2_bs_16/checkpoint-3992
+srun python eval.py --dataset_path "Preprocessed_Data/SentimentalLIAR" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/SentimentalLIAR/dataset_SentimentalLIAR_seed_1234_testsize_0.2_bs_32/checkpoint-2016
+srun python eval.py --dataset_path "Preprocessed_Data/TalesEmotions" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/TalesEmotions/dataset_TalesEmotions_seed_1234_testsize_0.2_bs_32/checkpoint-690
+srun python eval.py --dataset_path "Preprocessed_Data/UsVsThem" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/UsVsThem/dataset_UsVsThem_seed_1234_testsize_0.2_bs_16/checkpoint-309
+srun python eval.py --dataset_path "Preprocessed_Data/WASSA22" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/WASSA22/dataset_WASSA22_seed_1234_testsize_0.2_bs_8/checkpoint-768
+srun python eval.py --dataset_path "Preprocessed_Data/XED" --checkpoint_path retrained_results/retraining/dataset_EmotionStimulus_seed_1234_testsize_0.2_bs_8/XED/dataset_XED_seed_1234_testsize_0.2_bs_32/checkpoint-3060

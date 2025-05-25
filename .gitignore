@@ -3,8 +3,8 @@
 /__pycache__
 *.Identifier
 /results
-/eval_results
 /retrained_results
 *.Identifier
 /task_embeddings
 /__pycache__
+/eval_results/runs

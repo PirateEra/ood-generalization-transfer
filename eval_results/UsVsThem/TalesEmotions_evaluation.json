@@ -1,0 +1,12 @@
+{
+    "eval_loss": 0.3314898908138275,
+    "eval_model_preparation_time": 0.0027,
+    "eval_f1_micro": 0.15656390717007274,
+    "eval_f1_macro": 0.059582236895254256,
+    "eval_precision_micro": 0.3992932862190813,
+    "eval_recall_micro": 0.0973718224903059,
+    "eval_subset_accuracy": 0.02112163146394756,
+    "eval_runtime": 7.069,
+    "eval_samples_per_second": 194.228,
+    "eval_steps_per_second": 6.083
+}

@@ -1,0 +1,10 @@
+{
+    "eval_loss": 0.018549956381320953,
+    "eval_model_preparation_time": 0.0027,
+    "eval_mse": 0.018549952656030655,
+    "eval_mae": 0.10478930175304413,
+    "eval_r2": 0.08642987161874771,
+    "eval_runtime": 15.0446,
+    "eval_samples_per_second": 170.028,
+    "eval_steps_per_second": 21.27
+}

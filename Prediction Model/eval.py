@@ -47,8 +47,8 @@ def plot_predictions(true_values, pred_values):
 
 def plot_pred_groups(true_labels, pred_labels):
     labels = sorted(set(true_labels) | set(pred_labels))  # All unique labels in True or Predicted
-    df = pd.DataFrame({'True': true_labels, 'Predicted': pred_labels})
-    conf_matrix = pd.crosstab(df['True'], df['Predicted'], normalize='index')
+    df = pd.DataFrame({'True Group': true_labels, 'Predicted Group': pred_labels})
+    conf_matrix = pd.crosstab(df['True Group'], df['Predicted Group'], normalize='index')
 
     conf_matrix = conf_matrix.reindex(index=labels, columns=labels, fill_value=0)
 

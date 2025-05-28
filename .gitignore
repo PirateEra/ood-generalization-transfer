@@ -12,3 +12,6 @@
 /Prediction Model/tensorboard_prediction_model_logs
 /Prediction Model/lightning_logs
 /Prediction Model/checkpoints
+/jobs
+/logs
+/__pycache__

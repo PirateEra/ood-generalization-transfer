@@ -8,3 +8,7 @@
 /task_embeddings
 /__pycache__
 /eval_results/runs
+/text_embeddings
+/Prediction Model/tensorboard_prediction_model_logs
+/Prediction Model/lightning_logs
+/Prediction Model/checkpoints
